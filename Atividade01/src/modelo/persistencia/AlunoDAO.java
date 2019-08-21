@@ -11,6 +11,7 @@ import java.util.List;
 
 public class AlunoDAO implements DAO<Aluno> {
 
+    @Override
     public List<Aluno> listar() throws DadosException {
         List<Aluno> lista = new ArrayList<>();
 
@@ -35,6 +36,7 @@ public class AlunoDAO implements DAO<Aluno> {
         return lista;
     }
 
+    @Override
     public void incluir(Aluno entidade) throws DadosException {
         try {
             String sql = "UPDATE ALUNOS SET MATRICULA=?, NOME=? WHERE ID=?";
@@ -49,6 +51,7 @@ public class AlunoDAO implements DAO<Aluno> {
         }
     }
 
+    @Override
     public void Alterar(Aluno entidade) throws DadosException {
         try {
             String sql = "UPDATE ALUNOS SET MATRICULA=?, NOME=? WHERE ID=?";
@@ -64,6 +67,7 @@ public class AlunoDAO implements DAO<Aluno> {
         }
     }
 
+    @Override
     public void excluir(int id) throws DadosException {
         try {
             String sql = "DELETE FORM ALUNOS WHERE ID=?";
@@ -79,6 +83,9 @@ public class AlunoDAO implements DAO<Aluno> {
     }
 
     
+    @Override
+    
+     
     public Aluno consultar(int id) throws DadosException {
         Aluno aluno = new Aluno();
 
